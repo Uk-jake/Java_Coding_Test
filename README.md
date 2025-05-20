@@ -1,4 +1,4 @@
-# Java Coding Test Practice
+# Java Coding Test
 
 코딩 테스트 문제를 꾸준히 풀고 기록하는 저장소입니다.
 플랫폼은 프로그래머스와 백준을 사용합니다.
