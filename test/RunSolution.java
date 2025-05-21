@@ -1,31 +1,26 @@
+package test;
+
 import java.io.*;
 import java.util.*;
 
 public class RunSolution {
+    public static void main(String[] args){
 
-    public static void main(String[] args) throws IOException {
-        // 예시 1: Scanner 사용
-        // Scanner sc = new Scanner(System.in);
-        // int a = sc.nextInt();
-        // int b = sc.nextInt();
-        // System.out.println(a + b);
+        int[] org = {4,2,3,1,5};
+        System.out.println("org : " + Arrays.toString(org));
 
-        // 예시 2: BufferedReader 사용
-         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-         int a = Integer.parseInt(br.readLine());
-         int b = Integer.parseInt(br.readLine());
-         System.out.println(a + b);
+        System.out.println("solutions");
 
-        // 프로그래머스용 테스트
-        // Solution s = new Solution();
-        // int result = s.solution(3, 4);
-        // System.out.println(result);
+        int[] sorted = solutions(org);
+        System.out.println("org :" + Arrays.toString(org));
+        System.out.println("sorted :" + Arrays.toString(sorted));
     }
-}
 
-// 프로그래머스 문제용 테스트 클래스 예시
-// class Solution {
-//     public int solution(int a, int b) {
-//         return a + b;
-//     }
-// }
+    private static int[] solutions(int[] arr){
+        int[] clone = arr.clone();
+        Arrays.sort(clone);
+
+        return clone;
+    }
+
+}
