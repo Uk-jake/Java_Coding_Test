@@ -1,9 +1,6 @@
-package test;
-
-import java.io.*;
 import java.util.*;
 
-public class RunSolution {
+public class PG_L1_두개뽑아서더하기_20250521 {
     public static void main(String[] args){
         // 입력 1 : {2,1,3,4,1}
         // 입력 2 : {5,0,2,7}
