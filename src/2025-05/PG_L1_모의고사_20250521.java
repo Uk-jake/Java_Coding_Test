@@ -1,9 +1,6 @@
-package test;
-
-import java.io.*;
 import java.util.*;
 
-public class RunSolution {
+public class PG_L1_모의고사_20250521 {
     public static void main(String[] args){
         // 입력 1 : [1,2,3,4,5]
         // 입력 2 : [1,3,2,4,2]
