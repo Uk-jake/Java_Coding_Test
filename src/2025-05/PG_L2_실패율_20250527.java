@@ -1,9 +1,6 @@
-package test;
-
-import java.io.*;
 import java.util.*;
 
-public class RunSolution {
+public class PG_L2_실패율_20250527 {
     public static void main(String[] args){
 
         int N = 4;
