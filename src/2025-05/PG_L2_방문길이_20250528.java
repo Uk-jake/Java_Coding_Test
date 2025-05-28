@@ -1,9 +1,6 @@
-package test;
-
-import java.io.*;
 import java.util.*;
 
-public class RunSolution {
+public class PG_L2_방문길이_20250528 {
     public static void main(String[] args){
 
         String dirs = "ULURRDLLU";
