@@ -1,9 +1,6 @@
-package test;
-
-import java.io.*;
 import java.util.*;
 
-public class RunSolution {
+public class PG_L2_괄호회전하기 {
     public static void main(String[] args) {
 
         String input = "}}})";
@@ -17,13 +14,12 @@ public class RunSolution {
 
         int answer = 0;
 
-        for(int i = 0 ; i < s.length(); i++){
-            if(checkBracket(stringBuilder.toString())){
+        for (int i = 0; i < s.length(); i++) {
+            String rotated = s.substring(i) + s.substring(0, i);
+
+            if (checkBracket(rotated)) {
                 answer++;
             }
-
-            stringBuilder = stringBuilder.append(stringBuilder.charAt(0));
-            stringBuilder.deleteCharAt(0);
         }
 
         return answer;
@@ -62,6 +58,6 @@ public class RunSolution {
         }
 
         // stack이 비어 있을 경우 올바른 괄호 아니면 올바르지 않은 괄호(여는 괄호가 닫히지 않았다는 것)
-        return stack.empty();
+        return stack.isEmpty();
     }
 }
