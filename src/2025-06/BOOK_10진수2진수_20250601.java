@@ -1,9 +1,6 @@
-package test;
-
-import java.io.*;
 import java.util.*;
 
-public class RunSolution {
+public class BOOK_10진수2진수_20250601 {
     public static void main(String[] args) {
 
         int decimal = 12345;
