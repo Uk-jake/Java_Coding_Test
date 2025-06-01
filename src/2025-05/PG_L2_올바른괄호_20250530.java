@@ -1,13 +1,7 @@
-package test;
-
-import java.io.*;
-import java.util.*;
-
-public class RunSolution {
+public class PG_L2_올바른괄호_20250530 {
     public static void main(String[] args) {
 
         String s = "";
-
         System.out.println(solution(s));
 
     }
@@ -21,8 +15,6 @@ public class RunSolution {
         for(int i = 0; i < s.length(); i++){
             char tmp = s.charAt(i);
 
-//            System.out.println(tmp);
-
             if( tmp == '('){
                 count++;
             } else if ( tmp == ')') {
@@ -35,14 +27,6 @@ public class RunSolution {
             }
         }
 
-        // count가 0일 경우 괄호가 다 닫힌 상태 이므로 올바른 괄호
-        if(count == 0){
-            return true;
-        }
-        // count가 0 이상이면 괄호가 다 닫힌 상태가 아니므로 올바른 괄호가 아님
-        else {
-            return false;
-        }
-
+        return count == 0;
     }
 }
