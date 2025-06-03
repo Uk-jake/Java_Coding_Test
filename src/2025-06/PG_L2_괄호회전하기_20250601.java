@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class PG_L2_괄호회전하기 {
+public class PG_L2_괄호회전하기_20250601 {
     public static void main(String[] args) {
 
         String input = "}}})";

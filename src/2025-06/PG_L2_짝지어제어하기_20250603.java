@@ -1,9 +1,6 @@
-package test;
-
-import java.io.*;
 import java.util.*;
 
-public class RunSolution {
+public class PG_L2_짝지어제어하기_20250603 {
     public static void main(String[] args) {
 
         String input = "cbcb";
