@@ -1,9 +1,6 @@
-package test;
-
-import java.io.*;
 import java.util.*;
 
-public class RunSolution {
+public class PG_L2_주식가격_20250603 {
     public static void main(String[] args) {
 
         int[] stockPrices = {1, 2, 3, 2, 3};
