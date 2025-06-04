@@ -1,10 +1,6 @@
-package test;
-
-import java.io.*;
-import java.security.Key;
 import java.util.*;
 
-public class RunSolution {
+public class PG_L2_기능개발_20250604 {
     public static void main(String[] args) {
 
         int[] progresses = {93, 30, 55};
