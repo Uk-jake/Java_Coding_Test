@@ -1,10 +1,6 @@
-package test;
-
-import java.io.*;
-import java.security.Key;
 import java.util.*;
 
-public class RunSolution {
+public class PG_L1_완주하지못한선수_20250613 {
     public static void main(String[] args) {
 
         String[] participant = {"mislav", "stanko", "mislav", "ana"};
@@ -27,7 +23,7 @@ public class RunSolution {
                 number++;
                 hashMap.put(participatedName, number);
 
-            // 이름이 존재하지 않으면 value 값 1로 put
+                // 이름이 존재하지 않으면 value 값 1로 put
             }else{
                 hashMap.put(participatedName, 1);
             }
