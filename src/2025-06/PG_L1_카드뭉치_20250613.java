@@ -1,10 +1,8 @@
-package test;
-
 import java.io.*;
 import java.security.Key;
 import java.util.*;
 
-public class RunSolution {
+public class PG_L1_카드뭉치_20250613 {
     public static void main(String[] args) {
 
         String[] cards1 = {"i", "drink", "water"};
