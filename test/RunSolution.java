@@ -7,56 +7,65 @@ import java.util.*;
 public class RunSolution {
     public static void main(String[] args) {
 
-        int[][] board = {{0, 0, 0, 0, 0}, {0, 0, 1, 0, 3}, {0, 2, 5, 0, 1}, {4, 2, 4, 4, 2}, {3, 5, 1, 3, 1}};
-        int[] moves = {1, 5, 3, 5, 1, 2, 1, 4};
+        String[] want = {"banana"};
+        int[] number = {10};
+        String[] discount = {"banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana"};
 
-        System.out.println(solution(board, moves));
+        System.out.println(solution(want, number, discount));
     }
 
-    public static int solution(int[][] board, int[] moves) {
+    public static int solution(String[] want, int[] number, String[] discount) {
 
-        // 1. 주어진 board를 이용해서 board 길이 만큼 Stack으로 인형 쌓기
+        int availableDay = 0;
 
-        // HashMap을 이용하여 board 길이 만큼 Stack 선언
-        HashMap<Integer, ArrayDeque<Integer>> hashMap = new HashMap<>();
+        // 1. 정현이가 사야하는 물품 HashMap에 초기화
+        HashMap<String, Integer> todoList = new HashMap<>();
 
-        for (int i = 1; i <= board.length; i++) {
-            hashMap.put(i, new ArrayDeque<>());
+        for(int i = 0 ; i < want.length ; i++){
+            todoList.put(want[i], number[i]);
         }
 
-        // 2중 for문 사용해서 해당 Stack에 item 넣기
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board.length; j++) {
-                int item = board[i][j];
+        // System.out.println(todoList);
 
-                // 0일 경우 item 존재하지 않음.
-                if (item != 0) {
-                    hashMap.get(j + 1).addFirst(item);
+        // 2. 1일차 부터의 할인 상품 초기화
+        HashMap<String, Integer> saleList = new HashMap<>();
+
+        for(int i = 0 ; i <  10; i++){
+            saleList.put(discount[i], saleList.getOrDefault(discount[i], 0) + 1);
+        }
+
+
+        // 3. for문 돌면서 구매할 수 있는 날짜 count
+        for(int i = 0; i < discount.length; i++){
+
+            // 할인 상품 update = 전날 상품 지우고 i + 9 상품 넣고
+            if( i != 0 ){
+                saleList.put(discount[i - 1], saleList.get(discount[i - 1]) - 1);
+
+                // i + 9 가 discount.length 넘으면 skip
+                if( i + 9 < discount.length){
+                    saleList.put(discount[i + 9], saleList.getOrDefault(discount[i], 0) + 1);
                 }
             }
-        }
 
-        // 2. moves 배열대로 크레인 움직여서 Stack에 쌓기
-        ArrayDeque<Integer> basket = new ArrayDeque<>();
-        int removedCount = 0;
+            // System.out.println(saleList);
 
-        // for문 사용
-        for (int location : moves) {
-            // 해당 위치의 Stack이 비어있을 경우 아무 동작 않함.
-            if (!hashMap.get(location).isEmpty()) {
+            // saleList에서 todoList를 살 수 있은 지 확인
+            int itemCount = todoList.size();
+            int tmp = 0;
 
-                int pickedItem = hashMap.get(location).pollLast();
-
-                // 바구니 stack의 맨위와 뽑은 item이 동일할 경우 삭제
-                if (!basket.isEmpty() && basket.peekLast() == pickedItem) {
-                    basket.pollLast();
-                    removedCount = removedCount + 2;
-                } else {
-                    basket.addLast(pickedItem);
+            for(String item : todoList.keySet()){
+                if(saleList.containsKey(item) && saleList.get(item) >= todoList.get(item)){
+                    tmp++;
                 }
             }
+
+            if(itemCount == tmp){
+                availableDay++;
+            }
+
         }
 
-        return removedCount;
+        return availableDay;
     }
 }
