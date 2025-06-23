@@ -1,10 +1,6 @@
-package test;
-
-import java.io.*;
-import java.security.Key;
 import java.util.*;
 
-public class RunSolution {
+public class PG_L2_오픈채팅방_20250623 {
     public static void main(String[] args) {
 
         String[] record = {"Enter uid1234 Muzi", "Enter uid4567 Prodo", "Leave uid1234", "Enter uid1234 Prodo", "Change uid4567 Ryan"};
